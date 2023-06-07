@@ -9,7 +9,9 @@ it("Should get a login token",async ()=>{
             "Content-Type":"application/json"
         },
         body:JSON.stringify({
-            "userName":"scmurdock@gmail.com",
+            //"userName":"scmurdock@gmail.com",
+            //"password":"P@ssw0rd"
+            "userName":"pen18011@byui.edu",
             "password":"P@ssw0rd"
         })
     }
