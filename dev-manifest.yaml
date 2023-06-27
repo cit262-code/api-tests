@@ -31,7 +31,7 @@ spec:
               port: 3000
               scheme: HTTP
             failureThreshold: 1
-            peridoSeconds: 10
+            periodSeconds: 10
             timeoutSeconds: 10
           startupProbe:
             httpGet:
@@ -41,4 +41,3 @@ spec:
             failureThreshold: 30
             periodSeconds: 10
             timeoutSeconds: 10
-            
