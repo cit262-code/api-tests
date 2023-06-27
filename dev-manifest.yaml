@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: alejo-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: alejo-api
+  template:
+    metadata:
+      labels:
+        app: alejo-api
+    spec:
+      containers:
+        - name: alejo-api
+        #this image is going to be the path to the image you create in a future step
+          image: us-docker.pkg.dev/team5-cit262/alejo-api/api-tests
+          ports:
+            - containerPort: 3000
+          resources:
+            limits:
+              cpu: ".5"
+              memory: "500Mi"
+            requests:
+              cpu: ".25"
+              memory: "250Mi"
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 3000
+              scheme: HTTP
+            failureThreshold: 1
+            peridoSeconds: 10
+            timeoutSeconds: 10
+          startupProbe:
+            httpGet:
+              path: /
+              port: 3000
+              scheme: HTTP
+            failureThreshold: 30
+            periodSeconds: 10
+            timeoutSeconds: 10
+            
