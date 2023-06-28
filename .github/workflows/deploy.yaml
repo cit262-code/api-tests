@@ -9,7 +9,7 @@ env:
   PROJECT_ID: ${{ secrets.GKE_PROJECT }}
   GKE_CLUSTER: team5-cluster-1   # Add your cluster name here.
   GKE_ZONE: us-central1   # Add your cluster zone here.
-  DEPLOYMENT_NAME: alejo-api # Add your deployment name here.
+  DEPLOYMENT_NAME: alejo-api-from-action # Add your deployment name here.
   IMAGE: alejo-api
 
 jobs:
